@@ -1,163 +1,106 @@
-@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap');
-
-/* الأنماط التي ستطبق على كل الصفحة */
+/* Styling the body element */
 body {
-    /* تحديد الخط الأساسي للصفحة */
-    font-family: 'Tajawal', sans-serif;
-    
-    /* إزالة أي هوامش افتراضية يضيفها المتصفح */
     margin: 0;
-    
-    /* وضع صورة كخلفية للصفحة بأكملها */
-    background-image: url('image.jpg');
-    
-    /* لجعل الصورة تغطي كامل مساحة الشاشة */
-    background-size: cover;
-    
-    /* لتوسيط الصورة */
-    background-position: center;
-    
-    /* لجعل الصورة ثابتة في مكانها عند تمرير الصفحة لأسفل */
-    background-attachment: fixed;
-}
-
-/* الحاوية التي تلتف حول كل المحتوى */
-.content {
-    /* إضافة حشوة داخلية لإبعاد المحتوى عن حواف الشاشة */
-    padding: 40px 20px;
-}
-
-
-/* --- 2. تصميم بطاقة البحث الشفافة (النموذج) --- */
-
-/* استهداف النموذج (form) */
-form {
-    /* لون الخلفية: هنا نستخدم rgba لإعطاء لون شفاف */
-    /* الأرقام الثلاثة الأولى هي للون (بني داكن)، والرقم الأخير (0.65) هو درجة الشفافية */
-    background-color: rgba(40, 30, 20, 0.65);
-    
-    /* التأثير الزجاجي (الضبابي) الذي يجعل ما خلف البطاقة غير واضح */
-    backdrop-filter: blur(10px);
-    
-    /* إضافة حواف دائرية للبطاقة */
-    border-radius: 12px;
-    
-    /* إضافة ظل خفيف حول البطاقة لتبدو بارزة */
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-    
-    /* تحديد عرض أقصى للبطاقة */
-    max-width: 600px;
-    
-    /* توسيط البطاقة في منتصف الصفحة */
-    margin-left: auto;
-    margin-right: auto;
-    
-    /* إضافة هوامش داخلية (padding) لإبعاد المحتوى عن الحواف */
-    padding: 40px;
-    
-    /* حد خفيف جدًا حول البطاقة */
-    border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-/* تصميم العنوان "Search for a Court Case" */
-form h2 {
-    color: #ffffff; /* لون النص أبيض */
-    text-align: center; /* توسيط النص */
-    margin-top: 0; /* إزالة الهامش العلوي */
-    margin-bottom: 30px; /* إضافة هامش سفلي */
-}
-
-/* تصميم حقول الإدخال (القوائم المنسدلة ومربع النص) */
-form select,
-form input[type="text"] {
-    width: 100%; /* جعل عرض الحقل 100% من عرض البطاقة */
-    padding: 12px; /* إضافة حشوة داخلية */
-    margin-bottom: 20px; /* إضافة هامش سفلي */
-    background-color: transparent; /* خلفية شفافة */
-    border: none; /* إزالة الحدود */
-    border-bottom: 1px solid rgba(255, 255, 255, 0.3); /* إضافة خط سفلي فقط */
-    color: #ffffff; /* لون النص أبيض */
-    font-size: 16px; /* حجم الخط */
-}
-input {
-    box-sizing: border-box;
+    padding: 0;
+    font-family: "Open Sans", sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
     background: transparent;
-}
-form select option {
-    background-color: #4a4a4a;
-    color: #ffffff;
+    position: relative;
 }
 
+/* Removing background image from body */
+body::before {
+    content: none;
+}
 
-/* تصميم زر البحث */
-form button[type="submit"] {
+/* Styling the form container */
+.container {
     width: 100%;
-    padding: 14px;
-    border-radius: 8px; /* حواف دائرية */
-    border: none; /* بدون حدود */
-    background-color: #A0522D; /* اللون البني الأساسي */
-    color: #ffffff; /* لون النص أبيض */
-    font-size: 18px; /* حجم الخط */
-    font-weight: bold; /* خط عريض */
-    cursor: pointer; /* تغيير شكل المؤشر عند المرور فوق الزر */
+    max-width: 700px;
+    background-color: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-
-/* --- 3. تصميم قسم النتائج السفلي --- */
-
-/* إخفاء الخط الفاصل الافتراضي */
-hr {
-    display: none;
+/* Styling the form header */
+h1 {
+    color: #333;
+    margin-bottom: 30px;
 }
 
-/* تصميم عنوان "النتائج" */
-hr, h2 {
-    text-align: center;
-    color: #ffffff; /* لون أبيض ليكون واضحاً على الخلفية */
-    font-size: 2.2rem;
-    margin-top: 50px; /* مسافة كبيرة لفصله عن النموذج */
+/* Styling each input group */
+.input-group {
+    width: 100%;
     margin-bottom: 20px;
-    /* إضافة ظل للنص لجعله أكثر وضوحاً فوق الصورة */
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 }
 
-/* تصميم الجدول كبطاقة بيضاء صلبة */
-table {
+/* Styling the input labels */
+label {
+    display: block;
+    margin-bottom: 8px;
+    color: #444;
+}
+
+/* Styling text and number input fields */
+input[type="text"],
+input[type="number"] {
     width: 100%;
-    max-width: 850px; /* تحديد عرض أقصى */
-    margin: 0 auto; /* توسيط الجدول في الصفحة */
-    background-color: #ffffff; /* خلفية بيضاء صلبة */
-    border-radius: 12px; /* حواف دائرية */
-    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1); /* ظل خفيف */
-    border-collapse: collapse; /* لإزالة المسافات بين خلايا الجدول */
-    overflow: hidden; /* مهم لجعل الحواف الدائرية تعمل بشكل صحيح */
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
 }
 
-/* تصميم خلايا الجدول (العناوين والبيانات) */
-th, td {
-    padding: 15px;
-    text-align: right; /* محاذاة النص لليمين */
-    border-bottom: 1px solid #f0f0f0; /* خط فاصل خفيف بين الصفوف */
-    color: #4a4a4a; /* لون نص داكن */
-}
-
-/* تصميم خاص لخلايا العناوين في الأعلى (th) */
-thead th {
-    background-color: #f8f9fa; /* خلفية رمادية فاتحة */
-}
-
-/* تصميم الزر الإضافي */
-.new-button {
-    display: block; /* لجعله يأخذ عرض كامل ويتوسط */
-    max-width: 850px;
-    width: 100%;
-    margin: 20px auto; /* توسيط الزر */
-    padding: 12px;
-    border:none; /* حد رمادي فاتح */
-    background-color: #a3562d; /* خلفية بيضاء */
-    color: #faf6f6; /* لون نص رمادي */
-    border-radius: 8px;
-    font-size: 16px;
-    font-weight: bold;
+/* Styling the submit button */
+button {
+    padding: 10px 20px;
+    background-color: #1d72b8;
+    color: white;
+    border: none;
+    border-radius: 5px;
     cursor: pointer;
+}
+
+/* Styling button on hover */
+button:hover {
+    background-color: #155d8b;
+}
+
+/* Styling the result section */
+.result {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #fff;
+    border-left: 5px solid #1d72b8;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+    width: 100%;
+    border-radius: 5px;
+    color: #000;
+}
+
+/* Styling the table inside result section */
+.result table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+/* Styling the table headers */
+.result th,
+.result td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ccc;
+}
+
+/* Styling the table rows alternately */
+.result tr:nth-child(even) {
+    background-color: #f9f9f9;
 }

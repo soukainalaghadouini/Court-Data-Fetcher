@@ -179,44 +179,41 @@
     </div>
     
         <div class="results-section">
-            <hr style="margin-top: 30px;">
-            <h2>النتائج</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Parties names</th>
-                        <th>Filing & next-hearing dates</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>
-                            {% if parties %}
-                                <ul>
-                                {% for p in parties %}
-                                    <li>{{ p }}</li>
-                                {% endfor %}
-                                </ul>
-                            {% else %}
-                                لا توجد بيانات
-                            {% endif %}
-                        </td>
-                        <td>
-                            {{ filing_date or "—" }}<br>
-                            {{ next_hearing or "—" }}
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
+        <hr style="margin-top: 30px;">
+        <h2>Results</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Parties names</th>
+                    <th>Filing & next-hearing dates</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        {% if parties %}
+                            <ul>
+                            {% for p in parties %}
+                                <li>{{ p }}</li>
+                            {% endfor %}
+                            </ul>
+                        {% else %}
+                            No data available
+                        {% endif %}
+                    </td>
+                    <td>
+                        {{ filing_date or "—" }}<br>
+                        {{ next_hearing or "—" }}
+                    </td>
+                </tr>
+            </tbody>
+        </table>
 
-            {% if pdf_urls %}
-                <a class="new-button" href="{{ pdf_urls[0] }}" target="_blank">تحميل</a>
-            {% else %}
-                <p class="new-button">لا يوجد ملف</p>
-            {% endif %}
-        </div>
-        
-    
-    
+        {% if pdf_urls %}
+            <a class="new-button" href="{{ pdf_urls[0] }}" target="_blank">Download</a>
+        {% else %}
+            <p class="new-button">No file available</p>
+        {% endif %}
+    </div>
 </body>
 </html>
