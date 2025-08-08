@@ -1,106 +1,130 @@
-/* Styling the body element */
+@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap'); 
+
+/* Global page styles */
 body {
+    font-family: 'Tajawal', sans-serif;
     margin: 0;
-    padding: 0;
-    font-family: "Open Sans", sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    background: transparent;
-    position: relative;
+    background-image: url('image.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
 }
 
-/* Removing background image from body */
-body::before {
-    content: none;
+/* Main content container */
+.content {
+    padding: 40px 20px;
 }
 
-/* Styling the form container */
-.container {
-    width: 100%;
-    max-width: 700px;
-    background-color: rgba(255, 255, 255, 0.15);
+/* Transparent search form styling */
+form {
+    background-color: rgba(40, 30, 20, 0.65);
     backdrop-filter: blur(10px);
+    border-radius: 12px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
     padding: 40px;
-    border-radius: 10px;
-    box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-/* Styling the form header */
-h1 {
-    color: #333;
+/* Search form header */
+form h2 {
+    color: #ffffff;
+    text-align: center;
+    margin-top: 0;
     margin-bottom: 30px;
 }
 
-/* Styling each input group */
-.input-group {
+/* Inputs and select fields */
+form select,
+form input[type="text"] {
     width: 100%;
+    padding: 12px;
     margin-bottom: 20px;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    color: #ffffff;
+    font-size: 16px;
 }
 
-/* Styling the input labels */
-label {
-    display: block;
-    margin-bottom: 8px;
-    color: #444;
+input {
+    box-sizing: border-box;
+    background: transparent;
 }
 
-/* Styling text and number input fields */
-input[type="text"],
-input[type="number"] {
+form select option {
+    background-color: #4a4a4a;
+    color: #ffffff;
+}
+
+/* Submit button styling */
+form button[type="submit"] {
     width: 100%;
-    padding: 10px;
+    padding: 14px;
+    border-radius: 8px;
     border: none;
-    border-radius: 5px;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-}
-
-/* Styling the submit button */
-button {
-    padding: 10px 20px;
-    background-color: #1d72b8;
-    color: white;
-    border: none;
-    border-radius: 5px;
+    background-color: #A0522D;
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: bold;
     cursor: pointer;
 }
 
-/* Styling button on hover */
-button:hover {
-    background-color: #155d8b;
+/* Results section styling */
+hr {
+    display: none;
 }
 
-/* Styling the result section */
-.result {
-    margin-top: 30px;
-    padding: 20px;
-    background-color: #fff;
-    border-left: 5px solid #1d72b8;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
-    width: 100%;
-    border-radius: 5px;
-    color: #000;
+hr, h2 {
+    text-align: center;
+    color: #ffffff;
+    font-size: 2.2rem;
+    margin-top: 50px;
+    margin-bottom: 20px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 }
 
-/* Styling the table inside result section */
-.result table {
+/* Results table styling */
+table {
     width: 100%;
+    max-width: 850px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
     border-collapse: collapse;
+    overflow: hidden;
 }
 
-/* Styling the table headers */
-.result th,
-.result td {
-    padding: 10px;
-    text-align: left;
-    border-bottom: 1px solid #ccc;
+/* Table cells styling */
+th, td {
+    padding: 15px;
+    text-align: center;
+    border-bottom: 1px solid #f0f0f0;
+    color: #4a4a4a;
+
 }
 
-/* Styling the table rows alternately */
-.result tr:nth-child(even) {
-    background-color: #f9f9f9;
+/* Table header background */
+thead th {
+    background-color: #f8f9fa;
+}
+
+/* Extra button styling */
+.new-button {
+    display: block;
+    max-width: 850px;
+    width: 100%;
+    margin: 20px auto;
+    padding: 12px;
+    border:none;
+    background-color: #a3562d;
+    color: #faf6f6;
+    text-align: center;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
 }
