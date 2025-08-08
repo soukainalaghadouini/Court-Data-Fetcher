@@ -3,28 +3,220 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{% pagetitle %}}</title>
+    <title>home</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     <script></script>
-
 </head>
 <body>
-  <div class="contaier">
-    <div class="content">
-        <form action="#">
-            <h2>Search for a Court Case</h2>
-            
-            <select class="forms">
-                <option value="" >Srlect Case Type</option>
-                <option value="civil">Civil</option>
-                <option value="criminal">Criminal</option>
-                <option value="appeal">Appeal</option>
-            </select><br>
-            <input   type="text" placeholder="Entry Case Number"  min="1" required><br>
-            <input  type="text" placeholder ="Entry Filing Year" min="1914" max="2099"required><br>
-            <button type="submit">Search</button>
-        </form>
+    <div class="contaier">
+        <div class="content">
+            <form method="POST" action="/cases">
+                <h2>Search for a Court Case</h2>
+
+                <select name="case_type" class="froms">
+                    <option value="">Select</option>
+                    <option value="">Select</option>
+                    <option value="ADMIN.REPORT">ADMIN.REPORT</option>
+                    <option value="ARB.A.">ARB.A.</option>
+                    <option value="ARB. A. (COMM.)">ARB. A. (COMM.)</option>
+                    <option value="ARB.P.">ARB.P.</option>
+                    <option value="BAIL APPLN.">BAIL APPLN.</option>
+                    <option value="CA">CA</option>
+                    <option value="CA (COMM.IPD-CR)">CA (COMM.IPD-CR)</option>
+                    <option value="C.A.(COMM.IPD-GI)">C.A.(COMM.IPD-GI)</option>
+                    <option value="C.A.(COMM.IPD-PAT)">C.A.(COMM.IPD-PAT)</option>
+                    <option value="C.A.(COMM.IPD-PV)">C.A.(COMM.IPD-PV)</option>
+                    <option value="C.A.(COMM.IPD-TM)">C.A.(COMM.IPD-TM)</option>
+                    <option value="CAVEAT(CO.)">CAVEAT(CO.)</option>
+                    <option value="CC(ARB.)">CC(ARB.)</option>
+                    <option value="CCP(CO.)">CCP(CO.)</option>
+                    <option value="CCP(REF)">CCP(REF)</option>
+                    <option value="CEAC">CEAC</option>
+                    <option value="CEAR">CEAR</option>
+                    <option value="CHAT.A.C.">CHAT.A.C.</option>
+                    <option value="CHAT.A.REF">CHAT.A.REF</option>
+                    <option value="CMI">CMI</option>
+                    <option value="CM(M)">CM(M)</option>
+                    <option value="CM(M)-IPD">CM(M)-IPD</option>
+                    <option value="C.O.">C.O.</option>
+                    <option value="CO.APP.">CO.APP.</option>
+                    <option value="CO.APPL.(C)">CO.APPL.(C)</option>
+                    <option value="CO.APPL.(M)">CO.APPL.(M)</option>
+                    <option value="CO.A(SB)">CO.A(SB)</option>
+                    <option value="C.O.(COMM.IPD-CR)">C.O.(COMM.IPD-CR)</option>
+                    <option value="C.O.(COMM.IPD-GI)">C.O.(COMM.IPD-GI)</option>
+                    <option value="C.O.(COMM.IPD-PAT)">C.O.(COMM.IPD-PAT)</option>
+                    <option value="C.O. (COMM.IPD-TM)">C.O. (COMM.IPD-TM)</option>
+                    <option value="CO.EX.">CO.EX.</option>
+                    <option value="CONT.APP.(C)">CONT.APP.(C)</option>
+                    <option value="CONT.CAS(C)">CONT.CAS(C)</option>
+                    <option value="CONT.CAS.(CRL)">CONT.CAS.(CRL)</option>
+                    <option value="CO.PET.">CO.PET.</option>
+                    <option value="C.REF.(O)">C.REF.(O)</option>
+                    <option value="CRL.A.">CRL.A.</option>
+                    <option value="CRL.L.P.">CRL.L.P.</option>
+                    <option value="CRL.M.C.">CRL.M.C.</option>
+                    <option value="CRL.M.(CO.)">CRL.M.(CO.)</option>
+                    <option value="CRL.M.I.">CRL.M.I.</option>
+                    <option value="CRL.O.">CRL.O.</option>
+                    <option value="CRL.O.(CO.)">CRL.O.(CO.)</option>
+                    <option value="CRL.REF.">CRL.REF.</option>
+                    <option value="CRL.REV.P.">CRL.REV.P.</option>
+                    <option value="CRL.REV.P.(MAT.)">CRL.REV.P.(MAT.)</option>
+                    <option value="CRL.REV.P.(NDPS)">CRL.REV.P.(NDPS)</option>
+                    <option value="CRL.REV.P.(NI)">CRL.REV.P.(NI)</option>
+                    <option value="C.R.P.">C.R.P.</option>
+                    <option value="CRP-IPD">CRP-IPD</option>
+                    <option value="C.RULE">C.RULE</option>
+                    <option value="CS(COMM)">CS(COMM)</option>
+                    <option value="CS(OS)">CS(OS)</option>
+                    <option value="CS(OS) GP">CS(OS) GP</option>
+                    <option value="CUSAA">CUSAA</option>
+                    <option value="CUS.A.C.">CUS.A.C.</option>
+                    <option value="CUS.A.R.">CUS.A.R.</option>
+                    <option value="CUSTOM A.">CUSTOM A.</option>
+                    <option value="DEATH SENTENCE REF.">DEATH SENTENCE REF.</option>
+                    <option value="DEMO">DEMO</option>
+                    <option value="EDC">EDC</option>
+                    <option value="EDR">EDR</option>
+                    <option value="EFA(COMM)">EFA(COMM)</option>
+                    <option value="EFA(OS)">EFA(OS)</option>
+                    <option value="EFA(OS)  (COMM)">EFA(OS)  (COMM)</option>
+                    <option value="EFA(OS)(IPD)">EFA(OS)(IPD)</option>
+                    <option value="EL.PET.">EL.PET.</option>
+                    <option value="ETR">ETR</option>
+                    <option value="EX.F.A.">EX.F.A.</option>
+                    <option value="EX.P.">EX.P.</option>
+                    <option value="EX.S.A.">EX.S.A.</option>
+                    <option value="FAO">FAO</option>
+                    <option value="FAO (COMM)">FAO (COMM)</option>
+                    <option value="FAO-IPD">FAO-IPD</option>
+                    <option value="FAO(OS)">FAO(OS)</option>
+                    <option value="FAO(OS) (COMM)">FAO(OS) (COMM)</option>
+                    <option value="FAO(OS)(IPD)">FAO(OS)(IPD)</option>
+                    <option value="GCAC">GCAC</option>
+                    <option value="GCAR">GCAR</option>
+                    <option value="GTA">GTA</option>
+                    <option value="GTC">GTC</option>
+                    <option value="GTR">GTR</option>
+                    <option value="I.A.">I.A.</option>
+                    <option value="I.P.A.">I.P.A.</option>
+                    <option value="ITA">ITA</option>
+                    <option value="ITC">ITC</option>
+                    <option value="ITR">ITR</option>
+                    <option value="ITSA">ITSA</option>
+                    <option value="LA.APP.">LA.APP.</option>
+                    <option value="LPA">LPA</option>
+                    <option value="MAC.APP.">MAC.APP.</option>
+                    <option value="MAT.">MAT.</option>
+                    <option value="MAT.APP.">MAT.APP.</option>
+                    <option value="MAT.APP.(F.C.)">MAT.APP.(F.C.)</option>
+                    <option value="MAT.CASE">MAT.CASE</option>
+                    <option value="MAT.REF.">MAT.REF.</option>
+                    <option value="MISC. APPEAL(PMLA)">MISC. APPEAL(PMLA)</option>
+                    <option value="OA">OA</option>
+                    <option value="OCJA">OCJA</option>
+                    <option value="O.M.P.">O.M.P.</option>
+                    <option value="O.M.P. (COMM)">O.M.P. (COMM)</option>
+                    <option value="OMP (CONT.)">OMP (CONT.)</option>
+                    <option value="O.M.P. (E)">O.M.P. (E)</option>
+                    <option value="O.M.P. (E) (COMM.)">O.M.P. (E) (COMM.)</option>
+                    <option value="O.M.P.(EFA)(COMM.)">O.M.P.(EFA)(COMM.)</option>
+                    <option value="OMP (ENF.) (COMM.)">OMP (ENF.) (COMM.)</option>
+                    <option value="O.M.P.(I)">O.M.P.(I)</option>
+                    <option value="O.M.P.(I) (COMM.)">O.M.P.(I) (COMM.)</option>
+                    <option value="O.M.P. (J) (COMM.)">O.M.P. (J) (COMM.)</option>
+                    <option value="O.M.P. (MISC.)">O.M.P. (MISC.)</option>
+                    <option value="O.M.P.(MISC.)(COMM.)">O.M.P.(MISC.)(COMM.)</option>
+                    <option value="O.M.P.(T)">O.M.P.(T)</option>
+                    <option value="O.M.P. (T) (COMM.)">O.M.P. (T) (COMM.)</option>
+                    <option value="O.REF.">O.REF.</option>
+                    <option value="RC.REV.">RC.REV.</option>
+                    <option value="RC.S.A.">RC.S.A.</option>
+                    <option value="RERA APPEAL">RERA APPEAL</option>
+                    <option value="REVIEW PET.">REVIEW PET.</option>
+                    <option value="RFA">RFA</option>
+                    <option value="RFA(COMM)">RFA(COMM)</option>
+                    <option value="RFA-IPD">RFA-IPD</option>
+                    <option value="RFA(OS)">RFA(OS)</option>
+                    <option value="RFA(OS)(COMM)">RFA(OS)(COMM)</option>
+                    <option value="RF(OS)(IPD)">RF(OS)(IPD)</option>
+                    <option value="RSA">RSA</option>
+                    <option value="SCA">SCA</option>
+                    <option value="SDR">SDR</option>
+                    <option value="SERTA">SERTA</option>
+                    <option value="ST.APPL.">ST.APPL.</option>
+                    <option value="STC">STC</option>
+                    <option value="ST.REF.">ST.REF.</option>
+                    <option value="SUR.T.REF.">SUR.T.REF.</option>
+                    <option value="TEST.CAS.">TEST.CAS.</option>
+                    <option value="TR.P.(C)">TR.P.(C)</option>
+                    <option value="TR.P.(C.)">TR.P.(C.)</option>
+                    <option value="TR.P.(CRL.)">TR.P.(CRL.)</option>
+                    <option value="VAT APPEAL">VAT APPEAL</option>
+                    <option value="W.P.(C)">W.P.(C)</option>
+                    <option value="W.P.(C)-IPD">W.P.(C)-IPD</option>
+                    <option value="WP(C)(IPD)">WP(C)(IPD)</option>
+                    <option value="W.P.(CRL)">W.P.(CRL)</option>
+                    <option value="WTA">WTA</option>
+                    <option value="WTC">WTC</option>
+                    <option value="WTR">WTR</option>
+                </select><br>
+
+                <input type="text" name="case_number" placeholder="Entry Case Number" min="1" required><br>
+
+                <select class="form-control" id="case_year" name="case_year">
+                    <option value="">Select</option>
+                    {% for year in range(2025, 1950, -1) %}
+                        <option value="{{ year }}">{{ year }}</option>
+                    {% endfor %}
+                </select>
+
+                <button type="submit">Search</button>
+        
+            </form> 
+        </div>
     </div>
-  </div>
+    
+        <div class="results-section">
+            <hr style="margin-top: 30px;">
+            <h2>النتائج</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Parties names</th>
+                        <th>Filing & next-hearing dates</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            {% if parties %}
+                                <ul>
+                                {% for p in parties %}
+                                    <li>{{ p }}</li>
+                                {% endfor %}
+                                </ul>
+                            {% else %}
+                                لا توجد بيانات
+                            {% endif %}
+                        </td>
+                        <td>
+                            {{ filing_date or "—" }}<br>
+                            {{ next_hearing or "—" }}
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            {% if pdf_urls %}
+                <a class="new-button" href="{{ pdf_urls[0] }}" target="_blank">تحميل</a>
+            {% else %}
+                <p class="new-button">لا يوجد ملف</p>
+            {% endif %}
+        </div>
+        
+    
+    
 </body>
 </html>
